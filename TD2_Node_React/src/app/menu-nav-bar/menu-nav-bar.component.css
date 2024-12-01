@@ -1,0 +1,8 @@
+/* Exemple d'ajout de style pour espacer un peu les éléments */
+.navbar-nav .nav-item {
+  margin-right: 20px;
+}
+
+.navbar-nav .dropdown-menu {
+  width: 200px;
+}

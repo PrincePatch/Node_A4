@@ -1,0 +1,119 @@
+<div class="container">
+  <h2>Recherche de leçon</h2>
+  <form>
+    <!-- Titre -->
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label for="title" class="form-label">Titre</label>
+      </div>
+      <div class="col-md-9">
+        <input type="text" id="title"  name="title" class="form-control rounded-3" placeholder="Entrez le titre" />
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label for="description" class="form-label">Description</label>
+      </div>
+      <div class="col-md-9">
+        <input type="text" id="description"  name="description" class="form-control rounded-3" placeholder="Entrez la description" />
+      </div>
+    </div>
+
+    <!-- Mode de recherche -->
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="searchMode"  value="basic" id="basicSearch" />
+      <label class="form-check-label" for="basicSearch">Mode de recherche de base</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="searchMode"  value="advanced" id="advancedSearch" />
+      <label class="form-check-label" for="advancedSearch">Mode de recherche avancée</label>
+    </div>
+
+    <!-- Afficher les options de recherche avancée si mode avancé activé -->
+    <div *ngIf="searchMode === 'advanced'">
+      <!-- Catégorie -->
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label for="category" class="form-label">Catégorie</label>
+        </div>
+        <div class="col-md-9">
+          <input type="text" id="category" name="category" class="form-control rounded-3" placeholder="Entrez la catégorie" />
+        </div>
+      </div>
+
+      <!-- Niveau -->
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label for="level" class="form-label">Niveau</label>
+        </div>
+        <div class="col-md-9">
+          <input type="text" id="level"  name="level" class="form-control rounded-3" placeholder="Entrez le niveau" />
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label for="tags" class="form-label">Tags</label>
+        </div>
+        <div class="col-md-9">
+          <input type="text" id="tags"  name="tags" class="form-control rounded-3" placeholder="Entrez les tags" />
+        </div>
+      </div>
+
+      <!-- Auteur -->
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label for="author" class="form-label">Auteur</label>
+        </div>
+        <div class="col-md-9">
+          <input type="text" id="author"  name="author" class="form-control rounded-3" placeholder="Entrez l'auteur" />
+        </div>
+      </div>
+
+      <!-- Date de dernière modification -->
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label for="lastModifiedDate" class="form-label">Dernière modification</label>
+        </div>
+        <div class="col-md-9">
+          <input type="date" id="lastModifiedDateStart" name="lastModifiedDateStart" class="form-control rounded-3" />
+          <input type="date" id="lastModifiedDateEnd" name="lastModifiedDateEnd" class="form-control rounded-3" />
+        </div>
+      </div>
+
+      <!-- Plage numérique -->
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label for="numericalRange" class="form-label">Plage numérique</label>
+        </div>
+        <div class="col-md-9">
+          <input type="number" id="numericalRangeStart"  name="numericalRangeStart" class="form-control rounded-3" placeholder="Min" />
+          <input type="number" id="numericalRangeEnd"  name="numericalRangeEnd" class="form-control rounded-3" placeholder="Max" />
+        </div>
+      </div>
+
+      <!-- Opérateurs de chaîne -->
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label for="stringOperator" class="form-label">Opérateur de chaîne</label>
+        </div>
+        <div class="col-md-9">
+          <select id="stringOperator" name="stringOperator" class="form-control rounded-3">
+            <option *ngFor="let operator of stringOperators" [value]="operator">{{ operator }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bouton de recherche -->
+    <div class="row mb-3">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        <button type="submit" class="btn btn-primary">Rechercher</button>
+      </div>
+    </div>
+  </form>
+</div>

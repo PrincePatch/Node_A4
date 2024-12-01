@@ -1,0 +1,4 @@
+/* Ajouter des coins arrondis pour tous les champs de recherche */
+input.form-control, select.form-control {
+  border-radius: 0.25rem;
+}
